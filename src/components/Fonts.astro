@@ -1,0 +1,17 @@
+---
+import '@fontsource-variable/inter'
+import '@fontsource-variable/source-serif-4'
+import '@fontsource/commit-mono'
+import '../styles/font-fallbacks.css'
+
+import interLatinWghtNormal from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url'
+import sourceSerifLatinWghtNormal from '@fontsource-variable/source-serif-4/files/source-serif-4-latin-wght-normal.woff2?url'
+import commitMonoLatin400 from '@fontsource/commit-mono/files/commit-mono-latin-400-normal.woff2?url'
+const preloadFonts = [interLatinWghtNormal, sourceSerifLatinWghtNormal, commitMonoLatin400]
+---
+
+{
+  preloadFonts.map((url) => (
+    <link rel="preload" href={url} as="font" type="font/woff2" crossorigin />
+  ))
+}

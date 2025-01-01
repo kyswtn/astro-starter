@@ -1,0 +1,30 @@
+---
+import {ClientRouter} from 'astro:transitions'
+import Fonts from '../components/Fonts.astro'
+import MetaTags, {type Props as MetaTagsProps} from '../components/MetaTags.astro'
+import ThemeScript from '../components/ThemeScript.astro'
+
+type Props = MetaTagsProps
+const {...meta} = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- These have been sorted optimally according to capo.js -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{meta.title}</title>
+    <ThemeScript />
+    <Fonts />
+    <ClientRouter />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <MetaTags {...meta} />
+    <slot name="head" />
+  </head>
+  <body class="font-sans subpixel-antialiased bg-gray-1">
+    <slot />
+  </body>
+</html>
