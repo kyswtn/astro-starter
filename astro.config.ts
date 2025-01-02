@@ -11,11 +11,6 @@ import config from './site.config'
 export default defineConfig({
   site: config.site,
   devToolbar: {enabled: false},
-  vite: {
-    build: {
-      minify: 'esbuild',
-    },
-  },
   integrations: [
     sitemap(),
     icons(),
