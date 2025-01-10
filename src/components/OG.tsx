@@ -41,8 +41,8 @@ export default async function OG() {
         <div
           style={{
             padding: '0 56px 84px 56px',
-            fontFamily: 'Inter',
-            fontWeight: 'bold',
+            fontFamily: 'Geist',
+            fontWeight: 800,
             fontSize: '84px',
           }}
         >
